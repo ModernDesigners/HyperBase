@@ -1,0 +1,19 @@
+.Home {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    .PostRow {
+        margin-top: 85px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .NewsRow {
+        position: sticky;
+        top: 0;
+        padding-top: 85px;
+        max-height: 600px;
+    }
+}

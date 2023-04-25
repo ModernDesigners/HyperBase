@@ -1,5 +1,5 @@
 nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   display: flex;
@@ -8,6 +8,7 @@ nav {
   background-color: var(--nav-bg-color);
   height: 55px;
   border-bottom: 1px solid var(--nav-border-color);
+  z-index: 99;
 }
 nav .container {
   display: flex;

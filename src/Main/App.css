@@ -2,10 +2,6 @@ body {
   background-color: var(--bg-color);
 }
 
-.App {
-  margin-top: 85px;
-}
-
 .content {
   display: flex;
   gap: 10px;

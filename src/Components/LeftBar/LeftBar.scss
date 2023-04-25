@@ -2,9 +2,12 @@
     width: 30%;
     max-width: 440px;
     padding-right: 10px;
-    position: fixed;
-    height: calc(100% - 85px);
+    position: sticky;
+    top: 0;
+    padding-top: 85px;
+    height: 100%;
     overflow: auto;
+    left: 25px;
 }
 
 .GroupsRow {

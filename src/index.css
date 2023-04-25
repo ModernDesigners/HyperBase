@@ -15,11 +15,16 @@
   --profile-info-color: #d9d9d9;
   --line-color: #eaeaea;
   --green: #00f47f;
+  --react-color: #aaaaaa;
 }
 
 @font-face {
   font-family: p_sb;
   src: url("./Fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: p_m;
+  src: url("./Fonts/Poppins-Medium.ttf");
 }
 @font-face {
   font-family: tkt_b;
@@ -44,6 +49,7 @@ h2 {
   color: var(--text-title-color);
   font-family: tkt_rc;
   letter-spacing: 3px;
+  font-weight: normal;
 }
 
 h3 {
@@ -73,6 +79,19 @@ p {
   margin-right: auto;
   margin-left: auto;
   width: 96%;
+  display: flex;
+}
+
+.m-6 {
+  width: 50%;
+}
+
+.m-8 {
+  width: 60%;
+}
+
+.m-4 {
+  width: 40%;
 }
 
 @media (max-width: 768px) {
