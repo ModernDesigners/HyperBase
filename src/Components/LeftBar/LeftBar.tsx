@@ -1,5 +1,4 @@
 import groupsAPI from "../../API/groupsAPI";
-import user from "../../Images/Users/user1.png";
 import "./LeftBar.css";
 import Promo1 from "../../Images/Promotions/promo1.png";
 import Promo2 from "../../Images/Promotions/promo2.png";
@@ -7,7 +6,19 @@ import Promo3 from "../../Images/Promotions/promo3.png";
 import Promo4 from "../../Images/Promotions/promo4.png";
 import Promo5 from "../../Images/Promotions/promo5.png";
 import Promo6 from "../../Images/Promotions/promo6.png";
-export default function LeftBar() {
+import usersAPI from "../../API/usersAPI";
+export default function LeftBar(props: {
+  activeChats: number[];
+  setActiveChats: React.Dispatch<React.SetStateAction<number[]>>;
+}) {
+  interface IUser {
+    ID: number;
+    ProfileImage: string;
+    ProfileBanner: string;
+    Username: string;
+    Surname: string;
+    active: number;
+  }
   return (
     <div className="LeftBar">
       <h2>ჯგუფები</h2>
@@ -21,51 +32,27 @@ export default function LeftBar() {
       <div className="Line"></div>
       <h2>აქტივი</h2>
       <div className="ActiveRow">
-        <div className="ActiveCard">
-          <div className="CardImage">
-            <img src={user} alt="user" />
-          </div>
-          <div className="CardInfo">
-            <p>გიორგი</p>
-            <p>კვარაცხელია</p>
-          </div>
-        </div>
-        <div className="ActiveCard">
-          <div className="CardImage">
-            <img src={user} alt="user" />
-          </div>
-          <div className="CardInfo">
-            <p>გიორგი</p>
-            <p>კვარაცხელია</p>
-          </div>
-        </div>
-        <div className="ActiveCard">
-          <div className="CardImage">
-            <img src={user} alt="user" />
-          </div>
-          <div className="CardInfo">
-            <p>გიორგი</p>
-            <p>კვარაცხელია</p>
-          </div>
-        </div>
-        <div className="ActiveCard">
-          <div className="CardImage">
-            <img src={user} alt="user" />
-          </div>
-          <div className="CardInfo">
-            <p>გიორგი</p>
-            <p>კვარაცხელია</p>
-          </div>
-        </div>
-        <div className="ActiveCard">
-          <div className="CardImage">
-            <img src={user} alt="user" />
-          </div>
-          <div className="CardInfo">
-            <p>გიორგი</p>
-            <p>კვარაცხელია</p>
-          </div>
-        </div>
+        {usersAPI.map((e: IUser, i: number) =>
+          e.active == 1 ? (
+            <div
+              key={i}
+              onClick={() =>
+                props.activeChats.indexOf(e.ID) == -1
+                  ? props.setActiveChats([...props.activeChats, e.ID])
+                  : null
+              }
+              className="ActiveCard"
+            >
+              <div className="CardImage">
+                <img src={e.ProfileImage} alt="user" />
+              </div>
+              <div className="CardInfo">
+                <p>{e.Username}</p>
+                <p>{e.Surname}</p>
+              </div>
+            </div>
+          ) : null
+        )}
       </div>
       <div className="Line"></div>
       <h2>შემოთავაზებები</h2>

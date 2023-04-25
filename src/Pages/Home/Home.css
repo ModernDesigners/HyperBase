@@ -14,5 +14,39 @@
   position: sticky;
   top: 0;
   padding-top: 85px;
-  max-height: 600px;
+  max-height: 900px;
+  min-width: 400px;
+}
+.Home .NewsRow .NewsCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.Home .NewsRow .NewsCards .NewsCard {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: red;
+}
+.Home .NewsRow .NewsCards .NewsCard img {
+  height: 100%;
+  width: 100%;
+}
+.Home .NewsRow .NewsCards .NewsCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.389), transparent);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.Home .NewsRow .NewsCards .NewsCard:hover:before {
+  opacity: 1;
 }

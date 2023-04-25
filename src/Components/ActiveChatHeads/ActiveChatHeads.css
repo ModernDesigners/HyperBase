@@ -1,0 +1,33 @@
+.ActiveChatHeads {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ActiveChatHeads .ChatHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 55px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.258);
+  cursor: pointer;
+}
+.ActiveChatHeads .ChatHead img {
+  height: 100%;
+  width: 100%;
+}
+.ActiveChatHeads .iAct::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  height: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--green);
+}

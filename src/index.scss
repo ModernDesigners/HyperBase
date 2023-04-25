@@ -76,14 +76,20 @@ p {
     width: 96%;
     display: flex;
 }
-.m-6 {
-    width: 50%;
+.m-10 {
+    width: 70%;
 }
 .m-8 {
     width: 60%;
 }
+.m-6 {
+    width: 50%;
+}
 .m-4 {
     width: 40%;
+}
+.m-2 {
+    width: 30%;
 }
 @media (max-width: 768px) {
     .container {
