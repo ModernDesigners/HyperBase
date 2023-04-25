@@ -1,0 +1,76 @@
+.LeftBar {
+  width: 30%;
+  max-width: 440px;
+  padding-right: 10px;
+  position: fixed;
+  height: calc(100% - 85px);
+  overflow: auto;
+}
+
+.GroupsRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.GroupsRow .GroupIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.GroupsRow .GroupIcon:hover {
+  background-color: var(--button-bg-color-hover);
+}
+
+.ActiveRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  min-height: 280px;
+}
+.ActiveRow .ActiveCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min-content;
+  cursor: pointer;
+}
+.ActiveRow .ActiveCard .CardInfo p {
+  font-size: 14px;
+}
+.ActiveRow .ActiveCard .CardImage {
+  position: relative;
+  border-radius: 50%;
+}
+.ActiveRow .ActiveCard .CardImage img {
+  height: 45px;
+}
+.ActiveRow .ActiveCard .CardImage::before {
+  content: "";
+  position: absolute;
+  height: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--green);
+  z-index: 1;
+  bottom: 5px;
+  right: 7px;
+}
+
+.Promotions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: space-around;
+  gap: 5px;
+}
+.Promotions .Promotion {
+  cursor: pointer;
+}
