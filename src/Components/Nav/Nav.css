@@ -1,0 +1,123 @@
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--nav-bg-color);
+  height: 55px;
+  border-bottom: 1px solid var(--nav-border-color);
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.navLogo .logoIcon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.navLogo .navSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 250px;
+  position: relative;
+}
+.navLogo .navSearch input {
+  padding: 0 10px;
+  background-color: var(--input-bg-color);
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  font-family: tkt_m;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-right: 40px;
+}
+.navLogo .navSearch img {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+}
+
+.navRoutes ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.navRoutes ul li {
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.navRoutes ul li::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 150%;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  bottom: -10px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.navRoutes ul li svg {
+  height: 28px;
+}
+.navRoutes ul li svg path {
+  transition: 0.2s;
+}
+.navRoutes ul .liActive path {
+  fill: var(--main-color);
+}
+.navRoutes ul .liActive::before {
+  opacity: 1;
+}
+
+.navUser {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.navUser .navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 36px;
+  aspect-ratio: 1;
+  background-color: var(--button-bg-color);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.navUser .navButton img {
+  height: 22px;
+}
+.navUser .navButton:hover {
+  background-color: var(--button-bg-color-hover);
+}
+.navUser .navProfile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 50%;
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+.navUser .navProfile img {
+  height: 36px;
+}
