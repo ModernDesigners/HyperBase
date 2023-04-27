@@ -38,6 +38,7 @@ nav .container {
 .navLogo .navSearch input {
   padding: 0 10px;
   background-color: var(--input-bg-color);
+  color: var(--input-color);
   height: 100%;
   width: 100%;
   outline: none;
@@ -81,6 +82,7 @@ nav .container {
   height: 28px;
 }
 .navRoutes ul li svg path {
+  fill: var(--nav-icons);
   transition: 0.2s;
 }
 .navRoutes ul .liActive path {
@@ -115,7 +117,6 @@ nav .container {
 .navUser .navProfile {
   display: flex;
   align-items: center;
-  cursor: pointer;
   margin-left: 10px;
   border-radius: 50%;
   outline: 2px solid var(--main-color);
@@ -123,4 +124,72 @@ nav .container {
 }
 .navUser .navProfile img {
   height: 36px;
+  cursor: pointer;
+}
+
+.navProfile {
+  position: relative;
+}
+.navProfile .ProfileBlock {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  height: auto;
+  width: 220px;
+  border-radius: 10px;
+  background-color: var(--block-bg);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.3s;
+}
+.navProfile .ProfileBlock .BlockContent {
+  padding: 15px;
+}
+.navProfile .ProfileBlock .BlockContent .ProfB {
+  cursor: pointer;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.navProfile .ProfileBlock .BlockContent .ProfB .ProfI p {
+  font-size: 12px;
+  font-family: tkt_rc;
+  font-weight: 600;
+}
+.navProfile .ProfileBlock .BlockContent .Line {
+  margin: 10px 0;
+}
+.navProfile .ProfileBlock .BlockContent .BlockOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: var(--block-button-bg);
+  color: var(--block-button-text);
+  font-family: p_sb;
+  transition: 0.2s;
+}
+.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB:hover {
+  background-color: var(--block-button-bg-hover);
+}
+.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB img {
+  height: 25px;
+}
+.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB p {
+  margin-left: 8px;
+  font-size: 14px;
+}
+.navProfile .PBShow {
+  visibility: visible;
+  opacity: 1;
 }

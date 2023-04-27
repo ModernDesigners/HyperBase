@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  padding-bottom: 50px;
 }
 .Home .NewsRow {
   position: sticky;
@@ -30,7 +31,7 @@
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  background-color: red;
+  background: transparent;
 }
 .Home .NewsRow .NewsCards .NewsCard img {
   height: 100%;

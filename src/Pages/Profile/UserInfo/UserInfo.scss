@@ -1,0 +1,70 @@
+.user-info {
+  border-bottom: 1px solid var(--line-color);
+  .user-cover {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 200px;
+    border-radius: 15px 15px 0px 0px;
+    background-image: url(../../../Images/UserBanners/UserBanner1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .user-flex-info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .user-leftside-info {
+      display: flex;
+      gap: 20px;
+      padding-left: 40px;
+
+      img {
+        transform: translateY(-25%);
+        width: 140px;
+      }
+      h2 {
+        margin-top: 30px;
+        width: 100px;
+      }
+    }
+    .user-rightside-info {
+      position: absolute;
+      right: 0px;
+      top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .public-info {
+        display: flex;
+        gap: 20px;
+        div {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          p {
+            color: var(--profile-info-color);
+          }
+          img {
+            width: 24px;
+          }
+        }
+      }
+      .friend {
+        display: flex;
+        align-items: center;
+        background-color: var(--main-color-bg);
+        color: var(--main-color);
+        justify-content: space-around;
+        border-radius: 4px;
+        padding: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        h3 {
+          color: var(--pink-color);
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+}

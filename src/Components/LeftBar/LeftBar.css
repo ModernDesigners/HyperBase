@@ -54,6 +54,7 @@
 }
 .ActiveRow .ActiveCard .CardImage img {
   height: 45px;
+  border-radius: 50%;
 }
 .ActiveRow .ActiveCard .CardImage::before {
   content: "";

@@ -1,4 +1,4 @@
-import newsAPI from "../../../../API/NewsAPI";
+import newsAPI from "../../../../API/newsAPI";
 
 export default function NewsRow() {
   return (

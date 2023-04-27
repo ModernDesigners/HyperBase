@@ -1,12 +1,16 @@
 :root {
     --main-color: #b439ff;
+    --main-color-bg: rgba(179, 57, 255, 0.15);
+
+    --nav-icons: #b4b4b4;
+    --scrollbar-bg: #dadada;
+    --scrollbar-thumb: #c5c5c5;
     --bg-color: #f6f6f6;
     --nav-bg-color: #ffffff;
-    --nav-border-color: rgba(221, 221, 221, 1);
+    --nav-border-color: #dddddd;
     --input-bg-color: #ececec;
     --text-title-color: #323232;
-    --text-color: rgba(0, 0, 0, 0.85);
-    --line-color: rgba(234, 234, 234, 1);
+    --text-color: #000000d9;
     --button-bg-color: #f5f5f5;
     --button-bg-color-hover: #e9e9e9;
     --chat-bg-color: #eaeaea;
@@ -14,8 +18,57 @@
     --post-time-color: #a6a6a6;
     --profile-info-color: #d9d9d9;
     --line-color: #eaeaea;
+    --block-button-bg: #efefef;
+    --block-button-bg-hover: #e9e9e9;
+    --block-button-text: #383838;
     --green: #00f47f;
+    --orange: #f97b22;
+    --blue: #19a7ce;
     --react-color: #aaaaaa;
+    --block-bg: #f7f7f7;
+    --chat-send-bg: #f1f1f1;
+    --chat-send-border: #d3d3d3;
+    --message-time: #ffffff;
+    --message-time-bg: #414141;
+    --my-message: #ffffff;
+    --chat-input-bg: #ebebeb;
+    --chat-input-stroke: #dedede;
+    --input-color: #000000;
+
+    // DARKMODE
+    // --nav-icons: #ffffffee;
+    // --scrollbar-bg: #0b0d38;
+    // --scrollbar-thumb: #13175f;
+    // --main-color: #b439ff;
+    // --bg-color: #07071c;
+    // --nav-bg-color: #0c0c2e;
+    // --nav-border-color: #141450;
+    // --input-bg-color: #101040;
+    // --text-title-color: #efefef;
+    // --text-color: #e8e8e8d9;
+    // --button-bg-color: #14144a;
+    // --button-bg-color-hover: #191961;
+    // --chat-bg-color: #0d0d33;
+    // --chat-message-bg-color: #07071c;
+    // --post-time-color: #07071c;
+    // --profile-info-color: #d9d9d9;
+    // --line-color: #111146;
+    // --green: #00f47f;
+    // --orange: #f97b22;
+    // --blue: #19a7ce;
+    // --react-color: #ececec;
+    // --block-bg: #090b2e;
+    // --block-button-bg: #12124a;
+    // --block-button-bg-hover: #1d1d74;
+    // --block-button-text: #383838;
+    // --chat-send-bg: #0d1042;
+    // --chat-send-border: #161a6b;
+    // --message-time: #ffffff;
+    // --message-time-bg: #131761;
+    // --my-message: #ffffff;
+    // --chat-input-bg: #161a6b;
+    // --chat-input-stroke: #181d7b;
+    // --input-color: #ffffff;
 }
 @font-face {
     font-family: p_sb;
@@ -43,8 +96,15 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    background-color: var(--scrollbar-bg);
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+}
 h2 {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--text-title-color);
     font-family: tkt_rc;
     letter-spacing: 3px;

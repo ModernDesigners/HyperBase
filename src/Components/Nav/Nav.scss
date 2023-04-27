@@ -36,6 +36,7 @@ nav {
         input {
             padding: 0 10px;
             background-color: var(--input-bg-color);
+            color: var(--input-color);
             height: 100%;
             width: 100%;
             outline: none;
@@ -78,6 +79,7 @@ nav {
             svg {
                 height: 28px;
                 path {
+                    fill: var(--nav-icons);
                     transition: 0.2s;
                 }
             }
@@ -116,13 +118,81 @@ nav {
     .navProfile {
         display: flex;
         align-items: center;
-        cursor: pointer;
         margin-left: 10px;
         border-radius: 50%;
         outline: 2px solid var(--main-color);
         outline-offset: 2px;
         img {
             height: 36px;
+            cursor: pointer;
         }
+    }
+}
+.navProfile {
+    position: relative;
+    .ProfileBlock {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        height: auto;
+        width: 220px;
+        border-radius: 10px;
+        background-color: var(--block-bg);
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.2s, visibility 0.3s;
+        .BlockContent {
+            padding: 15px;
+            .ProfB {
+                cursor: pointer;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                .ProfI {
+                    p {
+                        font-size: 12px;
+                        font-family: tkt_rc;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .Line {
+                margin: 10px 0;
+            }
+            .BlockOptions {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 10px;
+                .BlockB {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding: 6px 10px;
+                    border: 0;
+                    border-radius: 10px;
+                    background-color: var(--block-button-bg);
+                    color: var(--block-button-text);
+                    font-family: p_sb;
+                    transition: 0.2s;
+                    &:hover {
+                        background-color: var(--block-button-bg-hover);
+                    }
+                    img {
+                        height: 25px;
+                    }
+                    p {
+                        margin-left: 8px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .PBShow {
+        visibility: visible;
+        opacity: 1;
     }
 }
