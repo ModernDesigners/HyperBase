@@ -2,6 +2,7 @@ export const DarkMode = (Darkmode: boolean) => {
   const r: any = document.querySelector(":root");
   if (Darkmode) {
     localStorage.setItem("DarkMode", "1");
+
     r.style.setProperty("--nav-icons", "#ffffffee");
     r.style.setProperty("--scrollbar-bg", "#0b0d38");
     r.style.setProperty("--scrollbar-thumb", "#13175f");
@@ -35,6 +36,7 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--chat-input-bg", "#161a6b");
     r.style.setProperty("--chat-input-stroke", "#181d7b");
     r.style.setProperty("--input-color", "#ffffff");
+    r.style.setProperty("--post-button", "#dfdfdf");
   } else {
     localStorage.setItem("DarkMode", "0");
 
@@ -71,5 +73,6 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--chat-input-bg", "#ebebeb");
     r.style.setProperty("--chat-input-stroke", "#dedede");
     r.style.setProperty("--input-color", "#000000");
+    r.style.setProperty("--post-button", "#383838");
   }
 };

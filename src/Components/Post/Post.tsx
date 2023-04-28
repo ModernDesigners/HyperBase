@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 interface IPost {
   UserID: number;
-  Image: string;
+  Image: string | null;
   Description: string;
   Hearts: number;
   Comments: number;
@@ -41,9 +41,11 @@ export default function Post({
         </div>
       </Link>
       <p className="PostDescription">{Description}</p>
-      <div className="PostImage">
-        <img src={Image} alt="PostImage" />
-      </div>
+      {Image ? (
+        <div className="PostImage">
+          <img src={Image} alt="PostImage" />
+        </div>
+      ) : undefined}
       <div className="PostReacts">
         <div
           className={`PostReactors PostHearts${likeToggle ? " PostLiked" : ""}`}

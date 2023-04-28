@@ -13,7 +13,7 @@ interface IUser {
 export default function UserRightside(props: { UserData: IUser }) {
   interface IPost {
     UserID: number;
-    Image: string;
+    Image: string | null;
     Description: string;
     Hearts: number;
     Comments: number;

@@ -1,4 +1,5 @@
 import NewsRow from "./Components/NewsRow/NewsRow";
+
 import PostRow from "./Components/PostRow/PostRow";
 import "./Home.css";
 

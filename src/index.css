@@ -1,8 +1,10 @@
 :root {
   --main-color: #b439ff;
   --main-color_: #e01fff;
+  --main-color_hover: rgb(200, 0, 231);
   --main-color_bg: rgb(224, 31, 255, 0.15);
   --main-color-bg: rgba(179, 57, 255, 0.15);
+  --white: #ffffff;
   --green: #00f47f;
   --orange: #f97b22;
   --blue: #1bafd8;
@@ -36,6 +38,7 @@
   --chat-input-bg: #ebebeb;
   --chat-input-stroke: #dedede;
   --input-color: #000000;
+  --post-button: #383838;
 }
 
 @font-face {

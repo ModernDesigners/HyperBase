@@ -1,0 +1,87 @@
+.PostBlock {
+  width: 90%;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: var(--nav-bg-color);
+}
+.PostBlock .Line {
+  margin: 0;
+}
+.PostBlock .PostHeader {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+  gap: 15px;
+}
+.PostBlock .PostHeader form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 15px;
+}
+.PostBlock .PostHeader .PostProfile {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+}
+.PostBlock .PostHeader .PostProfile img {
+  height: 40px;
+  aspect-ratio: 1;
+}
+.PostBlock input {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-family: tkt_rc;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  color: var(--input-color);
+  outline: none;
+  border: 0;
+  background-color: var(--bg-color);
+}
+.PostBlock button {
+  color: var(--white);
+  font-family: tkt_rc;
+  letter-spacing: 2px;
+  font-size: 14px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: var(--main-color_);
+  transition: 0.2s;
+}
+.PostBlock button:hover {
+  background-color: var(--main-color_hover);
+}
+
+.PostOptionsRow {
+  padding-top: 10px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.PostOptionsRow .PostButton {
+  display: flex;
+  align-items: center;
+  font-family: tkt_m;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--post-button);
+}
+.PostOptionsRow .PostButton svg {
+  margin-right: 15px;
+}

@@ -3,7 +3,13 @@ import post2 from "../Images/Posts/post2.png";
 import post3 from "../Images/Posts/post3.png";
 import post4 from "../Images/Posts/post4.png";
 
-const postsAPI = [
+const postsAPI: {
+  UserID: number;
+  Image: string | null;
+  Description: string;
+  Hearts: number;
+  Comments: number;
+}[] = [
   {
     UserID: 0,
     Image: post1,
