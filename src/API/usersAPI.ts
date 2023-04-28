@@ -2,7 +2,6 @@ import user1 from "../Images/Users/user1.png";
 import user2 from "../Images/Users/user2.png";
 import user3 from "../Images/Users/user3.png";
 import user4 from "../Images/Users/user4.png";
-import user5 from "../Images/Users/user5.png";
 import UserBanner1 from "../Images/UserBanners/UserBanner1.png";
 
 const usersAPI = [
