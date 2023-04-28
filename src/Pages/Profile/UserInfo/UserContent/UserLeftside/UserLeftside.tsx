@@ -19,7 +19,7 @@ export default function UserLeftside(props: { UserData: IUser }) {
       </div>
       <div className="user-leftside-images">
         {postsAPI.map((e, i: number) =>
-          e.UserID == props.UserData.ID ? (
+          e.UserID == props.UserData.ID && e.Image !== null ? (
             <img key={i} src={e.Image} alt="post" />
           ) : undefined
         )}

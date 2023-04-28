@@ -15,7 +15,7 @@ export default function PostRow() {
   return (
     <div className="PostRow m-10">
       <PostBlock post={post} setPost={setPost} />
-      {postsAPI.map((e: IPost, i: number) => (
+      {postsAPI.map((e: IPost) => (
         <Post
           key={Math.random()}
           UserID={e.UserID}
