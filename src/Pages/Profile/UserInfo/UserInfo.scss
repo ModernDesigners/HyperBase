@@ -52,11 +52,11 @@
       .friend {
         display: flex;
         align-items: center;
-        background-color: var(--main-color-bg);
-        color: var(--main-color);
+        background-color: var(--main-color_bg);
+        color: var(--main-color_);
         justify-content: space-around;
         border-radius: 4px;
-        padding: 5px;
+        padding: 5px 10px;
         cursor: pointer;
         transition: 0.3s;
 

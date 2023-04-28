@@ -31,7 +31,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<Home />} />
-              <Route path="Profile" element={<Profile />} />
+              <Route path="Profile/:id" element={<Profile />} />
             </Route>
           </Routes>
         </div>

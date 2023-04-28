@@ -14,6 +14,9 @@
 .Post .PostImage img {
   width: 100%;
 }
+.Post a {
+  width: min-content;
+}
 .Post .PostUser {
   display: flex;
   align-items: center;
@@ -34,10 +37,12 @@
 .Post .PostReacts {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
   margin-top: 5px;
 }
 .Post .PostReacts .PostReactors {
+  width: 80px;
+  user-select: none;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -49,7 +54,27 @@
   transform: translateY(1px);
   color: var(--react-color);
   font-size: 14px;
+  transition: color 0.2s;
 }
-.Post .PostReacts .PostReactors img {
-  height: 16px;
+.Post .PostReacts .PostReactors svg path {
+  fill: var(--react-color);
+  transition: fill 0.2s;
+}
+.Post .PostReacts .PostComments:hover p {
+  color: var(--blue);
+}
+.Post .PostReacts .PostComments:hover svg path {
+  fill: var(--blue);
+}
+.Post .PostReacts .PostHearts:hover p {
+  color: var(--main-color_);
+}
+.Post .PostReacts .PostHearts:hover svg path {
+  fill: var(--main-color_);
+}
+.Post .PostReacts .PostLiked p {
+  color: var(--main-color_);
+}
+.Post .PostReacts .PostLiked svg path {
+  fill: var(--main-color_);
 }

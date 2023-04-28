@@ -108,8 +108,8 @@ nav .container {
   border-radius: 5px;
   transition: 0.2s;
 }
-.navUser .navButton img {
-  height: 22px;
+.navUser .navButton svg path {
+  fill: var(--nav-icons);
 }
 .navUser .navButton:hover {
   background-color: var(--button-bg-color-hover);

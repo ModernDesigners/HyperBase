@@ -108,8 +108,10 @@ nav {
         background-color: var(--button-bg-color);
         border-radius: 5px;
         transition: 0.2s;
-        img {
-            height: 22px;
+        svg {
+            path {
+                fill: var(--nav-icons);
+            }
         }
         &:hover {
             background-color: var(--button-bg-color-hover);

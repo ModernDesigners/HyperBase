@@ -6,6 +6,7 @@ import close from "../../../Images/Icons/chat/close.png";
 import chatsAPI from "../../../API/chatsAPI";
 import { useEffect, useRef, useState } from "react";
 import usersAPI from "../../../API/usersAPI";
+import { Link } from "react-router-dom";
 
 export default function Chat(props: {
   chatPrint: number;
@@ -98,13 +99,15 @@ export default function Chat(props: {
             : { opacity: 0.8, backgroundColor: ChatData.ChatColor }
         }
       >
-        <div className="ChatUser">
-          <img src={UserData.ProfileImage} alt="UserProfile" />
-          <div className="ChatUserInfo">
-            <p>{UserData.Username}</p>
-            <p>{UserData.Surname}</p>
+        <Link to={"/Profile/" + UserData.ID}>
+          <div className="ChatUser">
+            <img src={UserData.ProfileImage} alt="UserProfile" />
+            <div className="ChatUserInfo">
+              <p>{UserData.Username}</p>
+              <p>{UserData.Surname}</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="ChatOptions">
           <div className="ChatButton">
             <img src={call} alt="call" />
