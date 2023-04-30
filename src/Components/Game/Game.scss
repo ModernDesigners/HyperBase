@@ -1,0 +1,39 @@
+.game {
+  min-width: 20%;
+  background-color: rebeccapurple;
+  background-color: var(--gray-game-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background-color: var(--gray-game-color-hover);
+  }
+  .game-image {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    .game-info-leftside {
+      display: flex;
+      gap: 30px;
+      div {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        img {
+          width: 20px;
+        }
+        p {
+          color: #a0a0a0;
+        }
+      }
+    }
+    .game-favorite {
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+}

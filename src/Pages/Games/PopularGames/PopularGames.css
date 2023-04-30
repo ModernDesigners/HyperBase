@@ -1,0 +1,24 @@
+.popular-games .popular-games-flex {
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+}
+.popular-games .popular-games-flex .popular-game {
+  margin-top: 10px;
+  min-width: 33%;
+  background-color: var(--gray-game-color);
+  border-radius: 10px;
+}
+.popular-games .popular-games-flex img {
+  width: 100%;
+}
+.popular-games .popular-games-flex .popular-game-info {
+  padding: 10px;
+}
+.popular-games .popular-games-flex .popular-game-info p {
+  font-size: 14px;
+}
+.popular-games .popular-games-flex .popular-game-info h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}

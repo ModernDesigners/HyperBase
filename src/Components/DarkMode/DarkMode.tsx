@@ -37,6 +37,8 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--chat-input-stroke", "#181d7b");
     r.style.setProperty("--input-color", "#ffffff");
     r.style.setProperty("--post-button", "#dfdfdf");
+    r.style.setProperty("--gray-game-color", "#171344");
+    r.style.setProperty("--gray-game-color-hover", "#1d1856");
   } else {
     localStorage.setItem("DarkMode", "0");
 
@@ -73,6 +75,8 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--chat-input-bg", "#ebebeb");
     r.style.setProperty("--chat-input-stroke", "#dedede");
     r.style.setProperty("--input-color", "#000000");
-    r.style.setProperty("--post-button", "#383838");
+    r.style.setProperty("--input-color", "#000000");
+    r.style.setProperty("--gray-game-color", "#eeeeee");
+    r.style.setProperty("--gray-game-color-hover", "#e6e6e6");
   }
 };

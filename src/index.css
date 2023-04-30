@@ -39,6 +39,8 @@
   --chat-input-stroke: #dedede;
   --input-color: #000000;
   --post-button: #383838;
+  --gray-game-color: #eeeeee;
+  --gray-game-color-hover: #e6e6e6;
 }
 
 @font-face {

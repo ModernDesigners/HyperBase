@@ -8,6 +8,7 @@ import Chats from "../Components/Chats/Chats";
 import { DarkMode } from "../Components/DarkMode/DarkMode";
 import Profile from "../Pages/Profile/Profile";
 import { Route, Routes } from "react-router-dom";
+import Games from "../Pages/Games/Games";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,6 +33,7 @@ function App() {
             <Route path="/">
               <Route index element={<Home />} />
               <Route path="Profile/:id" element={<Profile />} />
+              <Route path="Games" element={<Games />} />
             </Route>
           </Routes>
         </div>
