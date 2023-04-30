@@ -26,6 +26,7 @@ nav .container {
   align-items: center;
   cursor: pointer;
   border-radius: 20px;
+  user-select: none;
 }
 .navLogo .navSearch {
   display: flex;
@@ -52,6 +53,7 @@ nav .container {
 .navLogo .navSearch img {
   position: absolute;
   right: 12px;
+  user-select: none;
   cursor: pointer;
 }
 

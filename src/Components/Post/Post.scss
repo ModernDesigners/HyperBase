@@ -32,6 +32,8 @@
     p {
         font-family: tkt_rc;
         font-weight: bold;
+        overflow-wrap: break-word;
+        width: 100%;
     }
     .PostReacts {
         display: flex;

@@ -20,11 +20,13 @@ nav {
     display: flex;
     align-items: center;
     gap: 15px;
+
     .logoIcon {
         display: flex;
         align-items: center;
         cursor: pointer;
         border-radius: 20px;
+        user-select: none;
     }
     .navSearch {
         display: flex;
@@ -50,6 +52,7 @@ nav {
         img {
             position: absolute;
             right: 12px;
+            user-select: none;
             cursor: pointer;
         }
     }

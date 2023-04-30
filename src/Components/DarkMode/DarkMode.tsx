@@ -3,7 +3,7 @@ export const DarkMode = (Darkmode: boolean) => {
   if (Darkmode) {
     localStorage.setItem("DarkMode", "1");
 
-    r.style.setProperty("--nav-icons", "#ffffffee");
+    r.style.setProperty("--nav-icons", "#3f3ff3ed");
     r.style.setProperty("--scrollbar-bg", "#0b0d38");
     r.style.setProperty("--scrollbar-thumb", "#13175f");
     r.style.setProperty("--main-color", "#b439ff");
@@ -39,6 +39,8 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--post-button", "#dfdfdf");
     r.style.setProperty("--gray-game-color", "#171344");
     r.style.setProperty("--gray-game-color-hover", "#1d1856");
+    r.style.setProperty("--border-form", "#141e56");
+    r.style.setProperty("--input-label-color", "#463dc3");
   } else {
     localStorage.setItem("DarkMode", "0");
 
@@ -78,5 +80,7 @@ export const DarkMode = (Darkmode: boolean) => {
     r.style.setProperty("--post-button", "#383838");
     r.style.setProperty("--gray-game-color", "#eeeeee");
     r.style.setProperty("--gray-game-color-hover", "#e6e6e6");
+    r.style.setProperty("--border-form", "#dcdcdc");
+    r.style.setProperty("--input-label-color", "#505050");
   }
 };

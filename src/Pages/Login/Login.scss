@@ -1,0 +1,185 @@
+.Login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 700px;
+    .m-6 {
+        position: relative;
+        z-index: 3;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+    }
+    .RocketBlock {
+        user-select: none;
+        h1 {
+            font-size: 32px;
+            font-family: tkt_b;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-align: center;
+            max-width: 400px;
+            color: var(--text-color);
+            span {
+                font-family: p_sb;
+                color: var(--main-color);
+            }
+        }
+        p {
+            font-family: tkt_b;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-align: center;
+            color: var(--desc-texter);
+        }
+        img {
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    .FormBlock {
+        user-select: none;
+        height: auto;
+        width: 450px;
+        background-color: var(--nav-bg-color);
+        border-radius: 10px;
+        border: 1px solid var(--border-form);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+        padding: 30px 10px;
+        h2 {
+            color: var(--main-color);
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            font-family: tkt_b;
+        }
+        .FormContent {
+            margin: auto;
+            width: 90%;
+        }
+        .FormInputRow {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            gap: 30px;
+        }
+
+        .FormInputer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            p {
+                font-family: tkt_b;
+                color: var(--input-label-color);
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+            input {
+                font-family: p_m;
+                height: 35px;
+                font-weight: 00;
+                letter-spacing: 1px;
+                font-size: 16px;
+                width: 100%;
+                background-color: var(--bg-color);
+                color: var(--input-color);
+                border-radius: 5px;
+                border: 0;
+                outline: none;
+                transition: background-color 0.2s;
+                padding: 0 10px;
+                &:focus {
+                    background-color: var(--input-bg-color);
+                }
+            }
+        }
+        .ForgotPassword {
+            display: flex;
+            justify-content: center;
+            color: var(--main-color);
+            white-space: nowrap;
+            font-family: tkt_b;
+            font-size: 14px;
+            width: min-content;
+            letter-spacing: 1px;
+            margin-left: auto;
+            cursor: pointer;
+            position: relative;
+            margin-top: 15px;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                background-color: var(--main-color);
+                height: 2px;
+                width: 0%;
+                transition: width 0.2s;
+            }
+            &:hover:before {
+                width: 100%;
+            }
+        }
+        button {
+            display: block;
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            font-family: tkt_b;
+            font-size: 16px;
+            color: var(--white);
+            background-color: var(--main-color);
+            margin: 20px auto;
+            border: 0;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: background-color 0.2s;
+            &:hover {
+                background-color: var(--main-color-hover);
+            }
+        }
+        .AccountP {
+            color: var(--text-color);
+            margin-top: 30px;
+            font-family: tkt_b;
+            span {
+                display: inline-flex;
+                justify-content: center;
+                position: relative;
+                color: var(--main-color);
+                cursor: pointer;
+                margin-left: 2px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    background-color: var(--main-color);
+                    height: 2px;
+                    width: 0%;
+                    transition: width 0.2s;
+                }
+                &:hover:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .BgWaves {
+        position: fixed;
+        bottom: 0;
+        height: 300px;
+        width: 100%;
+        overflow-x: hidden;
+        svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}

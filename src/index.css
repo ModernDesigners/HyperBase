@@ -1,5 +1,6 @@
 :root {
   --main-color: #b439ff;
+  --main-color-hover: #992edc;
   --main-color_: #e01fff;
   --main-color_hover: rgb(200, 0, 231);
   --main-color_bg: rgb(224, 31, 255, 0.15);
@@ -9,6 +10,8 @@
   --orange: #f97b22;
   --blue: #1bafd8;
   --red: #eb2b68;
+  --input-label-color: #505050;
+  --border-form: #dcdcdc;
   --nav-icons: #b4b4b4;
   --scrollbar-bg: #dadada;
   --scrollbar-thumb: #c5c5c5;
@@ -41,6 +44,7 @@
   --post-button: #383838;
   --gray-game-color: #eeeeee;
   --gray-game-color-hover: #e6e6e6;
+  --desc-texter: #909090;
 }
 
 @font-face {
