@@ -12,8 +12,7 @@ import { DarkMode } from "../DarkMode/DarkMode";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Nav(props: {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  darkmoder: React.MutableRefObject<boolean>;
 }) {
   const [navActive, setNavActive] = useState(-1);
   const [profBlock, setProfBlock] = useState(false);
@@ -34,8 +33,8 @@ export default function Nav(props: {
   });
 
   const darkModeToggle = () => {
-    DarkMode(!props.darkMode);
-    props.setDarkMode(!props.darkMode);
+    DarkMode(!props.darkmoder.current);
+    props.darkmoder.current = !props.darkmoder.current;
   };
   return (
     <nav>

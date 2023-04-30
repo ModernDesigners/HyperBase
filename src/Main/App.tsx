@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import LeftBar from "../Components/LeftBar/LeftBar";
 import Nav from "../Components/Nav/Nav";
 import Home from "../Pages/Home/Home";
@@ -11,11 +11,11 @@ import { Route, Routes } from "react-router-dom";
 import Games from "../Pages/Games/Games";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const darkmoder = useRef<boolean>(false);
   useEffect(() => {
     if (localStorage.getItem("DarkMode") == "1") {
       DarkMode(true);
-      setDarkMode(true);
+      darkmoder.current = true;
     }
   }, []);
 
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Nav darkmoder={darkmoder} />
       <div className="content">
         <LeftBar activeChats={activeChats} setActiveChats={setActiveChats} />
         <div className="containerC">
