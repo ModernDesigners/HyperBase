@@ -1,11 +1,47 @@
 import "./Register.css";
 import rocket from "../../Images/Decorations/rocket.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-export default function Register(props: { session: boolean }) {
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import { userSession } from "../../Main/App";
+export default function Register(props: { session: any }) {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [surname, setSurname] = useState("");
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const session = useContext(userSession);
+
+  const submitRegister = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (password == repeatPassword) {
+      axios
+        .post("http://localhost:8000/GetRegister", {
+          username: username,
+          surname: surname,
+          mail: mail,
+          password: password,
+        })
+        .then((res) => {
+          if (res.data.affectedRows == 1) {
+            session.setSession({
+              id: res.data.insertId,
+              loggedIn: true,
+              username: username,
+              surname: surname,
+              mail: mail,
+              password: password,
+            });
+            navigate("/");
+          }
+        });
+    } else {
+      alert("პაროლები არ ემთხვევა");
+    }
+  };
   useEffect(() => {
-    if (props.session) navigate("/");
+    if (props.session.loggedIn) navigate("/");
   }, []);
   return (
     <div className="Register">
@@ -15,33 +51,61 @@ export default function Register(props: { session: boolean }) {
             ანგარიშის <span>შექმნა</span>
           </h2>
           <div className="FormContent">
-            <div className="FormInputRow">
-              <div className="FormRow">
-                <div className="FormInputer">
-                  <p>სახელი</p>
-                  <input type="text" name="" id="" />
+            <form onSubmit={(e) => submitRegister(e)}>
+              <div className="FormInputRow">
+                <div className="FormRow">
+                  <div className="FormInputer">
+                    <p>სახელი</p>
+                    <input
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      type="text"
+                      name="username"
+                    />
+                  </div>
+                  <div className="FormInputer">
+                    <p>გვარი</p>
+                    <input
+                      value={surname}
+                      onChange={(e) => setSurname(e.target.value)}
+                      type="text"
+                      name="surname"
+                    />
+                  </div>
                 </div>
                 <div className="FormInputer">
-                  <p>გვარი</p>
-                  <input type="text" name="" id="" />
+                  <p>მეილი</p>
+                  <input
+                    value={mail}
+                    onChange={(e) => setMail(e.target.value)}
+                    type="text"
+                    name="mail"
+                  />
+                </div>
+                <div className="FormInputer">
+                  <p>პაროლი</p>
+                  <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="text"
+                    name="password"
+                  />
+                </div>
+                <div className="FormInputer">
+                  <p>გაიმეორეთ პაროლი</p>
+                  <input
+                    value={repeatPassword}
+                    onChange={(e) => setRepeatPassword(e.target.value)}
+                    type="text"
+                    name="repeatPassword"
+                  />
                 </div>
               </div>
-              <div className="FormInputer">
-                <p>მეილი</p>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="FormInputer">
-                <p>პაროლი</p>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="FormInputer">
-                <p>გაიმეორეთ პაროლი</p>
-                <input type="text" name="" id="" />
-              </div>
-            </div>
-            <button>რეგისტრაცია</button>
+              <button>რეგისტრაცია</button>
+            </form>
+
             <p className="AccountP">
-              უკვე გაქვთ ანგარიში?{" "}
+              უკვე გაქვთ ანგარიში?
               <span>
                 <Link to="/Login">ავტორიზაცია</Link>
               </span>

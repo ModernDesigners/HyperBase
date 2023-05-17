@@ -137,69 +137,137 @@ nav {
 }
 .navProfile {
     position: relative;
-    .ProfileBlock {
-        position: absolute;
-        right: 0;
-        top: 50px;
-        height: auto;
-        width: 220px;
-        border-radius: 10px;
-        background-color: var(--block-bg);
-        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.2s, visibility 0.3s;
-        .BlockContent {
-            padding: 15px;
-            .ProfB {
-                cursor: pointer;
-                gap: 10px;
-                display: flex;
-                align-items: center;
-                .ProfI {
-                    p {
-                        font-size: 12px;
-                        font-family: tkt_rc;
-                        font-weight: 600;
-                    }
+}
+.navNotifications {
+    position: relative;
+}
+.ProfileBlock {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    height: auto;
+    width: 220px;
+    border-radius: 10px;
+    background-color: var(--block-bg);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.3s;
+    .NotificationsRow {
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 230px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 5px;
+            background-color: var(--scrollbar-bg);
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: var(--scrollbar-thumb);
+        }
+        .Notification {
+            position: relative;
+            width: 100%;
+            min-height: 50px;
+            height: 50px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            &:hover {
+                background-color: var(--input-bg-color);
+            }
+            img {
+                height: 35px;
+            }
+            .NTime {
+                position: absolute;
+                top: 2px;
+                right: 3px;
+                font-size: 12px;
+                letter-spacing: 1px;
+                font-family: p_m;
+                color: var(--desc-texter);
+            }
+            .NotificationInfo {
+                padding-left: 10px;
+
+                .NUser {
+                    font-family: tkt_rc;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: var(--text-color);
                 }
-            }
-            .Line {
-                margin: 10px 0;
-            }
-            .BlockOptions {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                margin-top: 10px;
-                .BlockB {
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    padding: 6px 10px;
-                    border: 0;
-                    border-radius: 10px;
-                    background-color: var(--block-button-bg);
-                    color: var(--block-button-text);
-                    font-family: p_sb;
-                    transition: 0.2s;
-                    &:hover {
-                        background-color: var(--block-button-bg-hover);
-                    }
-                    img {
-                        height: 25px;
-                    }
-                    p {
-                        margin-left: 8px;
-                        font-size: 14px;
-                    }
+                .NDesc {
+                    font-size: 11px;
+                    font-family: tkt_b;
+                    letter-spacing: normal;
+                    color: var(--input-label-color);
                 }
             }
         }
     }
-    .PBShow {
-        visibility: visible;
-        opacity: 1;
+    .nP {
+        user-select: none;
+        text-align: center;
     }
+    .BlockContent {
+        padding: 15px;
+        .ProfB {
+            cursor: pointer;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            .ProfI {
+                p {
+                    font-size: 12px;
+                    font-family: tkt_rc;
+                    font-weight: 600;
+                }
+            }
+        }
+        .Line {
+            margin: 10px 0;
+        }
+        .BlockOptions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+            .BlockB {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 6px 10px;
+                border: 0;
+                border-radius: 10px;
+                background-color: var(--block-button-bg);
+                color: var(--block-button-text);
+                font-family: p_sb;
+                transition: 0.2s;
+                &:hover {
+                    background-color: var(--block-button-bg-hover);
+                }
+                img {
+                    height: 25px;
+                }
+                p {
+                    margin-left: 8px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+.PBShow {
+    visibility: visible;
+    opacity: 1;
 }

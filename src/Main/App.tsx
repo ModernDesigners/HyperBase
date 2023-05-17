@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import LeftBar from "../Components/LeftBar/LeftBar";
 import Nav from "../Components/Nav/Nav";
 import Home from "../Pages/Home/Home";
@@ -12,24 +12,36 @@ import Games from "../Pages/Games/Games";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 
+export const userSession = createContext<any>({});
+
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const darkmoder = useRef<boolean>(false);
-  const [session, setSession] = useState(true);
-  if (
-    session === false &&
-    location.pathname !== "/Login" &&
-    location.pathname !== "/Register"
-  ) {
-    navigate("/Login");
-  }
+  const [session, setSession] = useState({
+    id: 1,
+    loggedIn: true,
+    username: "ლუკა",
+    surname: "ფეხშველაშვილი",
+    mail: "battelerx@gmail.com",
+    password: "TESTVIEW",
+  });
+
   useEffect(() => {
     if (localStorage.getItem("DarkMode") == "1") {
       DarkMode(true);
       darkmoder.current = true;
     }
   }, []);
+  useEffect(() => {
+    if (
+      session.loggedIn == false &&
+      location.pathname != "/Login" &&
+      location.pathname != "/Register"
+    ) {
+      navigate("/Login");
+    }
+  }, [session]);
 
   const [activeChats, setActiveChats] = useState([0]);
   const [chats, setChats] = useState<number[]>([]);
@@ -37,40 +49,50 @@ function App() {
 
   return (
     <div className="App">
-      <Nav darkmoder={darkmoder} session={session} setSession={setSession} />
-      <div className="content">
-        {session ? (
-          <LeftBar activeChats={activeChats} setActiveChats={setActiveChats} />
-        ) : undefined}
-        <div className="containerC">
-          <Routes>
-            <Route path="/">
-              <Route index element={<Home />} />
-              <Route path="Profile/:id" element={<Profile />} />
-              <Route path="Games" element={<Games />} />
-              <Route path="Login" element={<Login session={session} />} />
-              <Route path="Register" element={<Register session={session} />} />
-            </Route>
-          </Routes>
+      <userSession.Provider
+        value={{ session: session, setSession: setSession }}
+      >
+        <Nav darkmoder={darkmoder} session={session} setSession={setSession} />
+        <div className="content">
+          {session.loggedIn ? (
+            <LeftBar
+              activeChats={activeChats}
+              setActiveChats={setActiveChats}
+            />
+          ) : undefined}
+          <div className="containerC">
+            <Routes>
+              <Route path="/">
+                <Route index element={<Home />} />
+                <Route path="Profile/:id" element={<Profile />} />
+                <Route path="Games" element={<Games />} />
+                <Route path="Login" element={<Login session={session} />} />
+                <Route
+                  path="Register"
+                  element={<Register session={session} />}
+                />
+              </Route>
+            </Routes>
+          </div>
         </div>
-      </div>
-      {session ? (
-        <Chats
-          setFocus={setFocus}
-          chats={chats}
-          setChats={setChats}
-          focus={focus}
-        />
-      ) : undefined}
+        {session.loggedIn ? (
+          <Chats
+            setFocus={setFocus}
+            chats={chats}
+            setChats={setChats}
+            focus={focus}
+          />
+        ) : undefined}
 
-      {session ? (
-        <ActiveChatHeads
-          setFocus={setFocus}
-          activeChats={activeChats}
-          setChats={setChats}
-          chats={chats}
-        />
-      ) : undefined}
+        {session.loggedIn ? (
+          <ActiveChatHeads
+            setFocus={setFocus}
+            activeChats={activeChats}
+            setChats={setChats}
+            chats={chats}
+          />
+        ) : undefined}
+      </userSession.Provider>
     </div>
   );
 }

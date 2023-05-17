@@ -2,24 +2,25 @@ import "./PostBlock.css";
 import user from "../../../../Images/Users/user2.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import postsAPI from "../../../../API/postsAPI";
+import { IPost } from "../PostRow/PostRow";
 
 export default function PostBlock(props: {
-  post: boolean;
-  setPost: React.Dispatch<React.SetStateAction<boolean>>;
+  post: IPost[];
+  setPost: React.Dispatch<React.SetStateAction<IPost[]>>;
 }) {
   const [postMessage, setPostMessage] = useState("");
 
   const submitPost = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    postsAPI.unshift({
+    var newPost = {
       UserID: 3,
       Image: null,
       Description: postMessage,
       Hearts: 0,
       Comments: 0,
-    });
-    props.setPost(!props.post);
+    };
+    props.setPost((current) => [newPost, ...current]);
+    console.log(props.post);
   };
   return (
     <div className="PostBlock">

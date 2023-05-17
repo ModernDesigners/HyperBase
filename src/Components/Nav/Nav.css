@@ -134,7 +134,12 @@ nav .container {
 .navProfile {
   position: relative;
 }
-.navProfile .ProfileBlock {
+
+.navNotifications {
+  position: relative;
+}
+
+.ProfileBlock {
   position: absolute;
   right: 0;
   top: 50px;
@@ -147,30 +152,94 @@ nav .container {
   opacity: 0;
   transition: opacity 0.2s, visibility 0.3s;
 }
-.navProfile .ProfileBlock .BlockContent {
+.ProfileBlock .NotificationsRow {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+.ProfileBlock .NotificationsRow::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+  background-color: var(--scrollbar-bg);
+}
+.ProfileBlock .NotificationsRow::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--scrollbar-thumb);
+}
+.ProfileBlock .NotificationsRow .Notification {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+.ProfileBlock .NotificationsRow .Notification:hover {
+  background-color: var(--input-bg-color);
+}
+.ProfileBlock .NotificationsRow .Notification img {
+  height: 35px;
+}
+.ProfileBlock .NotificationsRow .Notification .NTime {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: p_m;
+  color: var(--desc-texter);
+}
+.ProfileBlock .NotificationsRow .Notification .NotificationInfo {
+  padding-left: 10px;
+}
+.ProfileBlock .NotificationsRow .Notification .NotificationInfo .NUser {
+  font-family: tkt_rc;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.ProfileBlock .NotificationsRow .Notification .NotificationInfo .NDesc {
+  font-size: 11px;
+  font-family: tkt_b;
+  letter-spacing: normal;
+  color: var(--input-label-color);
+}
+.ProfileBlock .nP {
+  user-select: none;
+  text-align: center;
+}
+.ProfileBlock .BlockContent {
   padding: 15px;
 }
-.navProfile .ProfileBlock .BlockContent .ProfB {
+.ProfileBlock .BlockContent .ProfB {
   cursor: pointer;
   gap: 10px;
   display: flex;
   align-items: center;
 }
-.navProfile .ProfileBlock .BlockContent .ProfB .ProfI p {
+.ProfileBlock .BlockContent .ProfB .ProfI p {
   font-size: 12px;
   font-family: tkt_rc;
   font-weight: 600;
 }
-.navProfile .ProfileBlock .BlockContent .Line {
+.ProfileBlock .BlockContent .Line {
   margin: 10px 0;
 }
-.navProfile .ProfileBlock .BlockContent .BlockOptions {
+.ProfileBlock .BlockContent .BlockOptions {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 10px;
 }
-.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB {
+.ProfileBlock .BlockContent .BlockOptions .BlockB {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -183,17 +252,18 @@ nav .container {
   font-family: p_sb;
   transition: 0.2s;
 }
-.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB:hover {
+.ProfileBlock .BlockContent .BlockOptions .BlockB:hover {
   background-color: var(--block-button-bg-hover);
 }
-.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB img {
+.ProfileBlock .BlockContent .BlockOptions .BlockB img {
   height: 25px;
 }
-.navProfile .ProfileBlock .BlockContent .BlockOptions .BlockB p {
+.ProfileBlock .BlockContent .BlockOptions .BlockB p {
   margin-left: 8px;
   font-size: 14px;
 }
-.navProfile .PBShow {
+
+.PBShow {
   visibility: visible;
   opacity: 1;
 }

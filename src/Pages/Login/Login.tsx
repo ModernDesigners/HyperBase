@@ -1,31 +1,73 @@
 import "./Login.css";
 import rocket from "../../Images/Decorations/rocket.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-export default function Login(props: { session: boolean }) {
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import { userSession } from "../../Main/App";
+export default function Login(props: { session: any }) {
   const navigate = useNavigate();
   useEffect(() => {
-    if (props.session) navigate("/");
+    if (props.session.loggedIn) navigate("/");
   }, []);
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+  const session = useContext(userSession);
 
+  const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/GetLogin", {
+        mail: mail,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+
+        if (res.data.length !== 0) {
+          session.setSession({
+            id: res.data[0].id,
+            loggedIn: true,
+            username: res.data[0].username,
+            surname: res.data[0].surname,
+            mail: res.data[0].mail,
+            password: res.data[0].password,
+          });
+          // navigate("/");
+        } else {
+          alert("პაროლები ან მეილი არასწორია");
+        }
+      });
+  };
   return (
     <div className="Login">
       <div className="m-6">
         <div className="FormBlock">
           <h2>ავტორიზაცია</h2>
           <div className="FormContent">
-            <div className="FormInputRow">
-              <div className="FormInputer">
-                <p>მეილი</p>
-                <input type="text" name="" id="" />
+            <form onSubmit={(e) => formSubmit(e)}>
+              <div className="FormInputRow">
+                <div className="FormInputer">
+                  <p>მეილი</p>
+                  <input
+                    onChange={(e) => setMail(e.target.value)}
+                    value={mail}
+                    type="text"
+                    name="mail"
+                  />
+                </div>
+                <div className="FormInputer">
+                  <p>პაროლი</p>
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    type="text"
+                    name="password"
+                  />
+                </div>
               </div>
-              <div className="FormInputer">
-                <p>პაროლი</p>
-                <input type="text" name="" id="" />
-              </div>
-            </div>
-            <p className="ForgotPassword">პაროლის აღდგენა</p>
-            <button>შესვლა</button>
+              <p className="ForgotPassword">პაროლის აღდგენა</p>
+              <button>შესვლა</button>
+            </form>
             <p className="AccountP">
               არ გაქვთ ანგარიში?{" "}
               <span>
